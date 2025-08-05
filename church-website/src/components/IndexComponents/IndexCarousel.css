@@ -1,0 +1,114 @@
+/* CAROUSEL (HERO - SECTION) */
+.carousel {
+  position: relative;
+}
+.hero-section .carousel-item {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+}
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 15px;
+}
+.carousel-overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+}
+.carousel-overlay h1 {
+  color: gold;
+  font-weight: bold;
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+}
+.service-time {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+.watch-btn {
+  background-color: #fff;
+  color: #111;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+.watch-btn i {
+  color: red !important;
+  font-size: 1.3rem;
+}
+
+.service-time i {
+  margin-right: 0.5rem;
+}
+.navbar-collapse {
+  margin-right: 1.5rem;
+}
+
+/* Custom carousel indicators */
+.custom-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  z-index: 10;
+  padding: 10px 0;
+}
+.custom-indicator {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid gold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.custom-indicator.active {
+  background-color: gold;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section .carousel-item {
+    height: 60vh;
+  }
+  .carousel-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .carousel-overlay p {
+    font-size: 1rem;
+  }
+  .watch-btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section .carousel-item {
+    height: 50vh;
+  }
+  .carousel-overlay h1 {
+    font-size: 2rem;
+  }
+}
