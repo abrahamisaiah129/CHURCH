@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Gallery from "../../components/MediaComponents/Gallery";
 import * as bootstrap from 'bootstrap';
-import { useLoading } from '../../hooks/useLoading'; // Import useLoading hook
+   // Import useLoading hook
 
 function MusicsGallery() {
     const GalleryData = [

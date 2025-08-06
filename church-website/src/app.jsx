@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Import stationary components
 import Navbar from './components/navbar';
 import Footer from './components/Footer';
-import LoadingOverlay from './components/LoadingOverlay'; // NEW: Import LoadingOverlay
-import { LoadingProvider } from './contexts/LoadingContext'; // NEW: Import LoadingProvider
 
 // Events Pages
 import BabyDedication from './Pages/Events/babyDedication';
@@ -41,7 +39,7 @@ import Index from './Pages/Index/Index';
 
 function App() {
     return (
-        <LoadingProvider> {/* Ensure LoadingProvider wraps everything */}
+        < > {/* Ensure Fragment wraps everything */}
             <Navbar />
             <Routes>
                 {/* Home */}
@@ -82,8 +80,8 @@ function App() {
                 <Route path="*" element={<h1 className="text-center my-5 text-warning">404 - Page Not Found</h1>} />
             </Routes>
             <Footer />
-            <LoadingOverlay /> {/* Render the LoadingOverlay here */}
-        </LoadingProvider>
+            
+        </ >
     );
 }
 

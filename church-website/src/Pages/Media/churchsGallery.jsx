@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Gallery from "../../components/MediaComponents/Gallery";
 import * as bootstrap from 'bootstrap';
-import { useLoading } from '../../hooks/useLoading'; // NEW: Import useLoading hook
+// Removed: Import useLoading hook
 
 function ChurchsGallery() {
     const GalleryData = [
@@ -71,10 +71,10 @@ function ChurchsGallery() {
     ];
 
     const [showModal, setShowModal] = useState(false);
-    const [currentMedia, setCurrentMedia] = useState({ src: '', type: '', title: '', date: '', description: '' }); 
-    const modalRef = useRef(null); 
+    const [currentMedia, setCurrentMedia] = useState({ src: '', type: '', title: '', date: '', description: '' });
+    const modalRef = useRef(null);
 
-    const { stopLoading } = useLoading(); // Get stopLoading function from context
+    // Removed: const { stopLoading } = useLoading();
 
     useEffect(() => {
         let modalInstance = null;
@@ -88,7 +88,7 @@ function ChurchsGallery() {
             }
         }
         return () => {};
-    }, [showModal]); 
+    }, [showModal]);
 
     useEffect(() => {
         const modalElement = modalRef.current;
@@ -105,21 +105,20 @@ function ChurchsGallery() {
             };
         }
 
-        // Signal that content is loaded after a short delay
-        const timer = setTimeout(() => {
-            stopLoading();
-        }, 100); // Small delay to ensure the overlay shows briefly
+        // Removed: Loading related code
+        // const timer = setTimeout(() => {
+        //     stopLoading();
+        // }, 100);
+        // return () => clearTimeout(timer);
+    }, []); // Removed stopLoading from dependencies
 
-        return () => clearTimeout(timer); // Cleanup timeout
-    }, [stopLoading]); // Added stopLoading to dependencies
-
-    const handleMediaClick = (mediaSrc, mediaType, mediaTitle, mediaDate, mediaDescription) => { 
-        setCurrentMedia({ 
-            src: mediaSrc, 
-            type: mediaType, 
-            title: mediaTitle, 
-            date: mediaDate, 
-            description: mediaDescription 
+    const handleMediaClick = (mediaSrc, mediaType, mediaTitle, mediaDate, mediaDescription) => {
+        setCurrentMedia({
+            src: mediaSrc,
+            type: mediaType,
+            title: mediaTitle,
+            date: mediaDate,
+            description: mediaDescription
         });
         setShowModal(true);
     };
@@ -156,25 +155,25 @@ function ChurchsGallery() {
             <h2 className="text-center text-warning mb-4">Church's Gallery</h2>
             <div className="row g-4">
                 {GalleryData.map((item, index) => (
-                    <Gallery 
-                        key={index} 
-                        src={item.src} 
-                        type={item.type} 
-                        title={item.title} 
-                        date={item.date} 
-                        description={item.description} 
-                        onClick={() => handleMediaClick(item.src, item.type, item.title, item.date, item.description)} 
+                    <Gallery
+                        key={index}
+                        src={item.src}
+                        type={item.type}
+                        title={item.title}
+                        date={item.date}
+                        description={item.description}
+                        onClick={() => handleMediaClick(item.src, item.type, item.title, item.date, item.description)}
                     />
                 ))}
             </div>
 
-            <div 
-                className="modal fade" 
-                id="imageModal" 
-                tabIndex="-1" 
-                aria-labelledby="imageModalLabel" 
+            <div
+                className="modal fade"
+                id="imageModal"
+                tabIndex="-1"
+                aria-labelledby="imageModalLabel"
                 aria-hidden="true"
-                ref={modalRef} 
+                ref={modalRef}
             >
                 <div className="modal-dialog modal-dialog-centered modal-lg">
                     <div className="modal-content bg-dark text-light">
@@ -183,7 +182,7 @@ function ChurchsGallery() {
                             <button type="button" className="btn-close btn-close-white" aria-label="Close" onClick={handleCloseModal}></button>
                         </div>
                         <div className="modal-body text-center">
-                            {renderModalMedia()} 
+                            {renderModalMedia()}
                             {currentMedia.date && <p className="mt-2 mb-0 text-muted">{currentMedia.date}</p>}
                             {currentMedia.description && <p className="text-white">{currentMedia.description}</p>}
                         </div>
