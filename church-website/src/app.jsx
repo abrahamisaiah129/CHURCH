@@ -5,10 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/Footer';
 
-// Events Pages
-import BabyDedication from './Pages/Events/babyDedication';
-import Weddings from './Pages/Events/weddings';
-import ChristmasLights from './Pages/Events/christmasLights';
+// Events Page
 import EventDetailsPage from './Pages/Events/EventDetailsPage'; 
 
 // Departments Pages
