@@ -17,7 +17,7 @@ function Index() {
       <Programmes />
       <BookSection />
       <ContactSection />
-      <Footer />
+      {/* <Footer /> the footer and navbar are already added in the main layout , cause it is a static component */}
     </>
   );
 }
