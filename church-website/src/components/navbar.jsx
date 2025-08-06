@@ -136,11 +136,14 @@ function Navbar() {
                 {eventWithMonths("Fellowship Sunday")}
                 {eventWithMonths("Christmas Carol Competition")}
                 {eventWithMonths("Halleluyah Party")}
-                <li><Link className="dropdown-item text-warning" to="/events/baby-dedication">Baby Dedication</Link></li>
-                <li><Link className="dropdown-item text-warning" to="/events/weddings">Weddings</Link></li>
+                {eventWithMonths("Baby Dedication")}
+                {eventWithMonths("Weddings")}
+                {eventWithMonths("Christmas Lights")}
+
+                
                 {eventWithYears("Queen Esther", queenEstherYears)}
                 {eventWithYears("Grace", graceYears)}
-                <li><Link className="dropdown-item text-warning" to="/events/christmas-lights">Christmas Lights</Link></li>
+                
               </ul>
             </li>
 
