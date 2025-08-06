@@ -49,10 +49,10 @@ function App() {
                 <Route path="/about/church" element={<Church />} />
                 <Route path="/about/pastor" element={<Pastor />} />
 
-                {/* Specific Event Routes */}
+                {/* Specific Event Routes
                 <Route path="/events/baby-dedication" element={<BabyDedication />} />
                 <Route path="/events/weddings" element={<Weddings />} />
-                <Route path="/events/christmas-lights" element={<ChristmasLights />} />
+                <Route path="/events/christmas-lights" element={<ChristmasLights />} /> */}
 
                 {/* Dynamic Event Details Route */}
                 <Route path="/events/:eventName/:period" element={<EventDetailsPage />} />
